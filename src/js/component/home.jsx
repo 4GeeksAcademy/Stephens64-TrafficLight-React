@@ -1,26 +1,31 @@
-import React from "react";
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import '/workspaces/Stephens64-TrafficLight-React/src/js/index.js';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+function TrafficLight() {
+  const [color, setColor] = useState("red");
 
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+  return (
+    <div className="traffic-light">
+      <div
+        onClick={() => setColor("red")}
+        className={`light red ${color === 'red' ? 'glow' : ''}`}
+      ></div>
 
-export default Home;
+      <div
+        onClick={() => setColor("yellow")}
+        className={`light yellow ${color === 'yellow' ? 'glow' : ''}`}
+      ></div>
+
+      <div
+        onClick={() => setColor("green")}
+        className={`light green ${color === 'green' ? 'glow' : ''}`}
+      ></div>
+    </div>
+  );
+}
+
+// Render the TrafficLight component
+ReactDOM.render(<TrafficLight />, document.querySelector('#app'));
+
+export default TrafficLight;

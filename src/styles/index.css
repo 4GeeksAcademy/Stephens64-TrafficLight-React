@@ -1,12 +1,48 @@
-
-/* 
-
-    You can write your own styles here...
+.traffic-light {
+    width: 100px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-*/
+.light {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: grey;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.red.glow {
+    box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.8);  
+}
+
+.yellow.glow {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.8); 
+}
+
+.green.glow {
+    box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.8); 
+}
